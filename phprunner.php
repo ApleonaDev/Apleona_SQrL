@@ -807,7 +807,7 @@ function db_connect($host, $login, $password, $port, $ssl)
 	if( $port )
 		$host = $host.":".$port;
 
-	return @mysqli_connect($host, $login, $password);
+	return @mysql_connect($host, $login, $password);
 }
 
 /**
