@@ -1,7 +1,7 @@
 <?php
 
 
-include_once('fix_mysql.inc.php');
+//include_once('fix_mysql.inc.php');
 
 /////////////////////////////////////////////////////////////////////////////
 // PHPRunner connect proxy
