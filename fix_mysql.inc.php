@@ -10,8 +10,6 @@
 * So only If you are sure that this is not setting your server at risk, you can fix your old
 * code by adding this line at the beginning of your old code:
 
-<?php
-include_once('fix_mysql.inc.php');
 *
 * see: https://stackoverflow.com/a/37877644/1069083
 */
