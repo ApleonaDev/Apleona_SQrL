@@ -1,0 +1,15 @@
+{
+    "name": "martquinn/apleona_s-qrl",
+    "autoload": {
+        "psr-4": {
+            "Martquinn\\ApleonaSQrl\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MartinQuinn-Apleona",
+            "email": "martin.quinn@apleona.com"
+        }
+    ],
+    "require": {}
+}
