@@ -10,7 +10,7 @@
   //define("DB_HOST", "46.22.129.7");
   //define("DB_PASS", "7hJiy7*3");
 
-  define("DB_HOST", "20.234.163.93");
+  define("DB_HOST", "localhost");
   define("DB_PASS", 'L8s"d:*=DK)J!CS^');
   
   //define("DB_USER", "usr_squirrel");
