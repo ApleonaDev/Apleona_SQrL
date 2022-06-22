@@ -16,12 +16,12 @@
     <meta property="og:site_name" content="Looper - Bootstrap 4 Admin Theme">
     <script type="application/ld+json">
       {
-        "name": "Looper - Bootstrap 4 Admin Theme",
-        "description": "Responsive admin theme build on top of Bootstrap 4",
+        "name": "SQRL",
+        "description": "Consumable Stores and Asset Management",
         "author":
         {
           "@type": "Person",
-          "name": "Beni Arisandi"
+          "name": "Apleona"
         },
         "@type": "WebSite",
         "url": "",
@@ -101,8 +101,8 @@
                   <h6 class="dropdown-header d-none d-md-block d-lg-none"> <?php echo $_SESSION['SESS_USER_NAME']; ?> </h6>
 				  <a DISABLED class="dropdown-item" href="#"><span class="dropdown-icon oi oi-person"></span> Profile</a> 
 				  
-				  <a class="dropdown-item" href="../sqrl_login.php"><span class="dropdown-icon oi oi-account-logout"></span> Logout</a>
-				 
+				  <a class="dropdown-item" href="Logout.php"><span class="dropdown-icon oi oi-account-logout"></span> Logout & Return to MyOptimise</a>
+
                 </div><!-- /.dropdown-menu -->
               </div><!-- /.btn-account -->
             </div><!-- /.top-bar-item -->
