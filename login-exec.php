@@ -1,5 +1,8 @@
 <?php
 
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
 	//Start session
 	session_start();
 	
@@ -10,7 +13,8 @@
 	$errmsg_arr = array();
 	//Validation error flag
 	$errflag = false;
-	
+	var_dump($_POST);
+	exit();
 	//Connect to mysql server
 	require_once('getSQL.php');
 
@@ -25,6 +29,27 @@
 	$login = clean($_POST['inputUser']);
 	$password = clean($_POST['inputPassword']);
 
+    if (array_key_exists('token', $_POST)) {
+        $decodedToken = JWT::decode($_POST['token'], new Key(JWT_KEY, 'HS256'));
+        $user_details = $decodedToken->user_details;
+      
+        $user_id = 1;
+        $name = $user_details->name;
+        $user_type = $user_details->user_type;
+      
+        //session_start();
+            //Login Successful
+            session_regenerate_id();
+            $_SESSION['SESS_USER_ID'] = $user_id;
+            $_SESSION['SESS_USER_TYPE'] = (int) $user_type;
+            $_SESSION['SESS_USER_NAME'] = $name;
+            session_write_close();
+        
+            header("location: app/index.php");
+            //header("location: app/head.php");
+            exit();
+    } else {
+
 	//Input Validations
 	if($login == '') {
 		$errmsg_arr[] = 'Login ID missing';
@@ -34,9 +59,6 @@
 		$errmsg_arr[] = 'Password missing';
 		$errflag = true;
 	}
-	
-	
-	
 
 	//If there are input validations, redirect back to the login form
 	if($errflag) {
@@ -90,7 +112,7 @@
 		$stmt = null;
 	}	catch (PDOException $e) {print $e->getMessage();}
 
-
+	}
 
 
 
