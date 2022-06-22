@@ -5,8 +5,9 @@
 	$myPass = "7hJiy7*3"; 
 	$myDB = "db_squirrel_dev"; */
 
-
-require_once('config.php');
+$root = $_SERVER['DOCUMENT_ROOT'];
+// require_once '/config.php';
+require_once("$root/apleona_sqrl/config.php");
 $host = DB_HOST;
 $user = DB_USER;
 $pass = DB_PASS;

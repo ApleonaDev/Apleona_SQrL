@@ -1,5 +1,52 @@
 <?php 	
 
+// Load Config
+require_once '../config.php';
+
+// Load Firebase
+require_once '../vendor/firebase/php-jwt/src/JWT.php';
+require_once '../vendor/firebase/php-jwt/src/Key.php';
+require_once '../vendor/firebase/php-jwt/src/SignatureInvalidException.php';
+require_once '../vendor/firebase/php-jwt/src/ExpiredException.php';
+require_once '../vendor/firebase/php-jwt/src/BeforeValidException.php';
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
+session_start();
+
+if(strpos($_SERVER['REQUEST_URI'], "/Apleona_SQrL/app/index.php?token=")!==false){
+
+  $url = URLLOGINROOT;
+  $data = array($_GET['token']);
+
+  // use key 'http' even if you send the request to https://...
+  $options = array(
+      'http' => array(
+          'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+          'method'  => 'POST',
+          'content' => http_build_query($data)
+      )
+  );
+  $context  = stream_context_create($options);
+  $result = file_get_contents($url, false, $context);
+
+
+  $decodedToken = JWT::decode($_GET['token'], new Key(JWT_KEY, 'HS256'));
+  $user_details = $decodedToken->user_details;
+
+  $user_id = 1;
+  $name = $user_details->name;
+  $user_type = $user_details->user_type;
+
+  $_SESSION['SESS_USER_ID'] = $user_id;
+  $_SESSION['SESS_USER_TYPE'] = (int) $user_type;
+  $_SESSION['SESS_USER_NAME'] = $name;
+
+  header("location: index.php");
+
+}
+
 session_start(); 
 $userType = $_SESSION['SESS_USER_TYPE'];
 $userNm = $_SESSION['SESS_USER_NAME'];

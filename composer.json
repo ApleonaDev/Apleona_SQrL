@@ -11,5 +11,7 @@
             "email": "martin.quinn@apleona.com"
         }
     ],
-    "require": {}
+    "require": {
+        "kreait/firebase-php": "^5.19"
+    }
 }
