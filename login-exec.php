@@ -13,7 +13,7 @@ use Firebase\JWT\Key;
 	$errmsg_arr = array();
 	//Validation error flag
 	$errflag = false;
-	var_dump($_POST);
+
 	exit();
 	//Connect to mysql server
 	require_once('getSQL.php');
@@ -37,17 +37,17 @@ use Firebase\JWT\Key;
         $name = $user_details->name;
         $user_type = $user_details->user_type;
       
-        //session_start();
-            //Login Successful
-            session_regenerate_id();
-            $_SESSION['SESS_USER_ID'] = $user_id;
-            $_SESSION['SESS_USER_TYPE'] = (int) $user_type;
-            $_SESSION['SESS_USER_NAME'] = $name;
-            session_write_close();
+        session_start();
+        //Login Successful
+        session_regenerate_id();
+        $_SESSION['SESS_USER_ID'] = $user_id;
+        $_SESSION['SESS_USER_TYPE'] = (int) $user_type;
+        $_SESSION['SESS_USER_NAME'] = $name;
+        session_write_close();
         
-            header("location: app/index.php");
-            //header("location: app/head.php");
-            exit();
+        header("location: app/index.php");
+        //header("location: app/head.php");
+        exit();
     } else {
 
 	//Input Validations

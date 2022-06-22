@@ -12,9 +12,9 @@
 
     //Updated DB Params
     define('DB_HOST', 'localhost');
-    define('DB_USER', 'apleona');
-    define('DB_PASS', 'L8s"d:*=DK)J!CS^');
-    define('DB_NAME', 'sqrl');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+    define('DB_NAME', 'db_squirrel_dev');
   
     define('JWT_KEY', 'c7c2461148405e4659a23634f7cd1b9dd8777c4550f105611a84adb47bf01402');
     define('API_ID', 'eb0816d8-996b-4072-8e93-18f5fa5fd30c');
