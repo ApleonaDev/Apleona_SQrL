@@ -2,6 +2,6 @@
     if (!isset($_SESSION)) { session_start(); }
     $_SESSION = array(); 
     session_destroy(); 
-    header("Location: https://myoptimise.apleonaserv.com/auto-logout");
+    header("Location: https://myoptimise.apleonaserv.com");
     exit();
 ?>

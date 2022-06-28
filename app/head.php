@@ -100,8 +100,8 @@
                   <div class="dropdown-arrow ml-3"></div>
                   <h6 class="dropdown-header d-none d-md-block d-lg-none"> <?php echo $_SESSION['SESS_USER_NAME']; ?> </h6>
 				  <a DISABLED class="dropdown-item" href="#"><span class="dropdown-icon oi oi-person"></span> Profile</a> 
-				  
-				  <a class="dropdown-item" href="Logout.php"><span class="dropdown-icon oi oi-account-logout"></span> Logout & Return to MyOptimise</a>
+				  <a class="dropdown-item" href="returntooptimise.php"><span class="dropdown-icon oi oi-account-logout"></span> Return to MyOptimise</a>
+				  <a class="dropdown-item" href="logout.php"><span class="dropdown-icon oi oi-account-logout"></span> Logout </a>
 
                 </div><!-- /.dropdown-menu -->
               </div><!-- /.btn-account -->
